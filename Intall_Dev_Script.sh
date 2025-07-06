@@ -29,7 +29,7 @@ yay -S visual-studio-code-bin spotify
 yay -Sy brave-bin
 
 # Cloning my git dotfiles
-cd ~/Documents && git clone minha/url/do/git/com/meus/dotfiles
+cd ~/Documents && git clone https://github.com/Atlas-Unory/Dotfiles.git
 
 # Linking the needing fonts
 ln -s ~/Documents/Dotfiles/fonts ~/.local/share
