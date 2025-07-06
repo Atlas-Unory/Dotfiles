@@ -11,7 +11,7 @@
 #!/bin/bash
 
 # Updating the system
-sudo pacman -S syu
+sudo pacman -Syu
 
 # Installing ecensial packages
 sudo pacman -S git nvm zsh gimp qbittorrent discord fastfetch yazi fzf virtualbox neovim ghostty starship ntfs-3g unzip
