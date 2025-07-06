@@ -57,3 +57,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 # Cloning the zsh syntax-highliting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+
+# Finishing the installation
+echo "Installation complete"
