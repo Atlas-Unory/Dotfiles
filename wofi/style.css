@@ -1,0 +1,54 @@
+* {
+    font-family: JetBrainsMonoNLNerdFontMono;
+    color: #fff;
+}
+
+/* The window that conteins all other windows */
+window {
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.411);
+    border-radius: 10px;
+}
+
+/* The input where the search is done */
+#input {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid rgba(45, 241, 255, 0);
+    background-color: rgb(22, 22, 22);
+    font-style: italic;
+}
+
+
+/* The Box selected with the keyboard arrows */
+#inner-box {
+    /* border-top: 1px solid rgb(255, 255, 255); */
+
+}
+
+/* The window with the search and program components */
+#outer-box {
+    margin: 20px 20px;
+    /* background-color: rgb(22, 22, 22); */
+    /* border: 2px solid #ffff; */
+    padding: 20px;
+}
+
+#scroll {
+    margin-top: 30px;
+    background-color: rgb(20, 20, 20);
+}
+
+#text {
+    margin: 10px;
+}
+
+/* The current window with the programs */
+#entry {
+    color: rgb(255, 255, 255);
+    background-color: rgb(20, 20, 20);
+}
+
+#entry:selected {
+    background-color: rgba(65, 65, 65, 0.199);
+}
