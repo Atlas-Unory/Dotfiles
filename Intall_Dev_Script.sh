@@ -26,7 +26,7 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim && rm -rf ~/.config/
 yay -S visual-studio-code-bin spotify
 
 # Installing Brave browser
-yay -Sy brave-bin
+yay -S brave-bin
 
 # Cloning my git dotfiles
 cd ~/Documents && git clone https://github.com/Atlas-Unory/Dotfiles.git
