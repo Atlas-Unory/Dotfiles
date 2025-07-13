@@ -14,7 +14,7 @@
 sudo pacman -Syu
 
 # Installing ecensial packages
-sudo pacman -S git nvm zsh gimp qbittorrent discord fastfetch yazi fzf virtualbox neovim ghostty starship ntfs-3g unzip bat
+sudo pacman -S git zsh gimp qbittorrent discord fastfetch yazi fzf virtualbox neovim ghostty starship ntfs-3g unzip bat
 
 # Installing yay helper
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd $HOME
@@ -51,6 +51,12 @@ cd $HOME
 
 # Chanching to zsh shell
 chsh -s $(which zsh)
+
+# Installing NVM (Node Version Manager)
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+# Sourcing .zshrc after NVM installation
+source ~/.zshrc
 
 # Installing oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
