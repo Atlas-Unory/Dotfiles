@@ -35,7 +35,7 @@ cd ~/Documents && git clone https://github.com/Atlas-Unory/Dotfiles.git
 ln -s ~/Documents/Dotfiles/fonts ~/.local/share
 
 # Linking fastfetch config
-lsn -s ~/Documents/Dotfiles/fastfetch ~/.config
+ln -s ~/Documents/Dotfiles/fastfetch ~/.config
 
 # Reloading font cache
 fc-cache -vf
