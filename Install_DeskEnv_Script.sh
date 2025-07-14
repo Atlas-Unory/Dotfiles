@@ -30,7 +30,7 @@ ln -s ~/Documents/dotfiles/ghostty ~/.config
 ln -s ~/Documents/dotfiles/hypr ~/.config
 ln -s ~/Documents/dotfiles/waybar ~/.config
 ln -s ~/Documents/dotfiles/wofi ~/.config
-lsn -s ~/Documents/Dotfiles/fastfetch ~/.config
+ln -s ~/Documents/Dotfiles/fastfetch ~/.config
 
 # Linking the fonts
 ln -s ~/Documents/dotfiles/fonts ~/.local/share
