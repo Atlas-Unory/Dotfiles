@@ -47,7 +47,12 @@
 # font family
 font-family = JetBrainsMonoNerdFont
 
-# theme
+# Ghostty themes
+
 # Dracula, catppuccin-mocha
-theme = catppuccin-mocha
+# tokyonight-storm
+# tokyonight_night
+# cyberpunk
+# Retro
+theme = Dracula
 
