@@ -16,7 +16,7 @@
 sudo pacman -Syu
 
 # Installing the programs
-sudo pacman -S git gimp qbittorrent discord manuskript kdenlive virtualbox xournalpp vlc
+sudo pacman -S git gimp qbittorrent discord manuskript kdenlive virtualbox xournalpp vlc okular
 
 # Installing yay helper
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd $HOME
