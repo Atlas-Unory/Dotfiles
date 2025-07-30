@@ -14,7 +14,7 @@
 sudo pacman -Syu
 
 # Installing ecensial packages
-sudo pacman -S vlc gimp git discord obsidian wofi hyprland ntfs-3g unzip qbittorrent discord ghostty waybar ntfs-3g unzip fastfetch
+sudo pacman -S vlc gimp git discord obsidian wofi hyprland ntfs-3g unzip qbittorrent discord ghostty waybar ntfs-3g unzip fastfetch keepassxc
 
 # Installing yay
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd $HOME
