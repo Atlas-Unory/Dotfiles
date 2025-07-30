@@ -14,7 +14,7 @@
 sudo pacman -Syu
 
 # Installing ecensial packages
-sudo pacman -S git zsh gimp qbittorrent discord fastfetch yazi fzf virtualbox neovim ghostty starship ntfs-3g unzip bat
+sudo pacman -S git zsh gimp qbittorrent discord fastfetch yazi fzf virtualbox neovim ghostty starship ntfs-3g unzip bat keepassxc
 
 # Installing yay helper
 git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd $HOME
