@@ -17,7 +17,8 @@ Adobe Source Han Serif and Sans fonts and cjk and emoji which cover most of Asia
 ```bash
     sudo pacman -S adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts adobe-source-han-sans-otc-fonts adobe-source-han-sans-tw-fonts
 ```
+Fonts to display icons and emojis correctly
 ```bash
-    sudo pacman -S noto-fonts-cjk noto-fonts-emoji
+    sudo pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 ```
 
