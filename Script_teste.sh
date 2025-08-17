@@ -30,3 +30,6 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim && rm -rf ~/.config/
 ln -s ~/Documents/Dotfiles/fastfetch/ ~/.config/
 ln -s ~/Documents/Dotfiles/.zshrc/ ~/
 ln -s ~/Documents/Dotfiles/ghostty/ ~/.config/
+
+# Changing shell to zsh
+chsh -s $(which zsh)
