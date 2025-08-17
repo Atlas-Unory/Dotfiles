@@ -23,10 +23,10 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 # Installing zsh-autosuggestions
 sudo pacman -S zsh-autosuggestions
 
+# Installing lazyvim
+git clone https://github.com/LazyVim/starter ~/.config/nvim && rm -rf ~/.config/nvim/.git
+
 # Linking the Dotfiles
-
 ln -s ~/Documents/Dotfiles/fastfetch/ ~/.config/
-
 ln -s ~/Documents/Dotfiles/.zshrc/ ~/
-
 ln -s ~/Documents/Dotfiles/ghostty/ ~/.config/
