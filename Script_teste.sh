@@ -44,3 +44,4 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim && rm -rf ~/.config/
 # Linking the Dotfiles
 ln -s ~/Documents/Dotfiles/fastfetch/ ~/.config/
 ln -s ~/Documents/Dotfiles/ghostty/ ~/.config/
+ln -s ~/Documents/Dotfiles/fonts/ ~/.local/share/
