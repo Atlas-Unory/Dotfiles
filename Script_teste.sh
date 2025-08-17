@@ -17,7 +17,7 @@ cd $HOME
 yay -S visual-studio-code-bin --noconfirm
 
 # Installing Brave
-yay -Sy brave-bin --noconfirm
+yay -S brave-bin --noconfirm
 
 # installing oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --noconfirm
