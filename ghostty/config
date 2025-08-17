@@ -54,5 +54,5 @@ font-family = JetBrainsMonoNerdFont
 # tokyonight_night
 # cyberpunk
 # Retro
-theme = Dracula
+theme = catppuccin-mocha
 
