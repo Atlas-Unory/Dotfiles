@@ -14,6 +14,9 @@ cd $HOME
 # Installing VScode
 yay -S visual-studio-code-bin
 
+# Installing Brave
+yay -Sy brave-bin
+
 # installing oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
