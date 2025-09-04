@@ -4,7 +4,7 @@
 sudo pacman -Syu
 
 # Installing the basic packages
-sudo pacman -S --noconfirm ghostty neovim fish fisher curl keepassxc fastfetch gimp speedtest-cli php-apache yazi yay wget btop unzip unrar virtualbox php ntfs-3g eza apache bat flatpak npm
+sudo pacman -S --noconfirm ghostty neovim fish fisher curl keepassxc fastfetch gimp php-apache yazi yay wget btop unzip unrar virtualbox php ntfs-3g eza apache bat flatpak npm
 
 # Installing needed fonts
 sudo pacman -S --noconfirm noto-fonts-extra noto-fonts-emoji noto-fonts-cjk
