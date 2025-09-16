@@ -2,6 +2,9 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+# Stopping fish greeting
+set fish_greeting ""
+
 # Starship prompt init
 starship init fish | source
 
