@@ -44,15 +44,12 @@
 
 ####### my settings ########
 
-# font family
-font-family = JetBrainsMonoNerdFont
-
 # Ghostty themes
-
 # Dracula, catppuccin-mocha
+# Tinacious Design Dark
 # tokyonight-storm
 # tokyonight_night
 # cyberpunk
 # Retro
-theme = catppuccin-mocha
+theme = "Tinacious Design Dark"
 
