@@ -6,7 +6,7 @@ Since I can't know what kind of project you work with, you may have to edit the 
 
 ## ✨ Customizing Desktop
 
-## 🗚 More fonts
+## 🗚  More fonts
 There are some fonts that I didn't got in the script, so here they are.
 
 Adobe source sans serif and sans fonts and CJK and emoji which cover most of Asia characters.
@@ -14,11 +14,13 @@ Adobe source sans serif and sans fonts and CJK and emoji which cover most of Asi
 ```bash
     sudo pacman -S sudo adobe-source-han-serif-cn-fonts adobe-source-han-serif-jp-fonts adobe-source-han-serif-kr-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-tw-fonts
 ```
+
 ```bash
     sudo pacman -S adobe-source-han-sans-cn-fonts adobe-source-han-sans-jp-fonts adobe-source-han-sans-kr-fonts adobe-source-han-sans-otc-fonts adobe-source-han-sans-tw-fonts
 ```
+
 Fonts to display icons and emojis correctly
+
 ```bash
     sudo pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 ```
-
