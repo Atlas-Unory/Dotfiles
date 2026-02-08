@@ -1,7 +1,0 @@
-term = ghostty
-width = 600
-prompt = Search
-allow_markup = true
-allow_images = true
-line_wrap = word
-hide_scroll = true
