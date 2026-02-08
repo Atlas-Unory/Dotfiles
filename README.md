@@ -6,7 +6,7 @@ Since I can't know what kind of project you work with, you may have to edit the 
 
 ## ✨ Customizing Desktop
 
-## 🗚  More fonts
+### 🗚  More fonts
 There are some fonts that I didn't got in the script, so here they are.
 
 Adobe source sans serif and sans fonts and CJK and emoji which cover most of Asia characters.
