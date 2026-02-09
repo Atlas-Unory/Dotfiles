@@ -11,10 +11,9 @@ If you are an Arch Linux user or are currently using one of its distributions, I
 ## ✨ Customizing Desktop
 
 ### 🗚  More fonts
-There are some fonts that I didn't got in the script, so here they are.
+Here are some fonts I think you should install on your system.
 
 Adobe source sans serif and sans fonts and CJK and emoji which cover most of Asia characters.
-
 ```bash
     sudo pacman -S sudo adobe-source-han-serif-cn-fonts adobe-source-han-serif-jp-fonts adobe-source-han-serif-kr-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-tw-fonts
 ```
