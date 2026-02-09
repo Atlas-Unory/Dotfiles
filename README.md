@@ -9,7 +9,7 @@ This are my personal dotfiles (at least some of them) for a development environm
 All my dotfiles were made to work on Linux, specifically on Arch Linux and its distributions. In case you aren't on one of these distributions, my dotfiles won't work natively 100% right off the bat. For them all to work, you'll have to manually verify which of the packages are available on your Linux distribution.
 If you are an Arch Linux user or are currently using one of its distributions. I don't have a `Install` script yet, but I will add one in the future, but I don't know when, I just know it won't be soon since I'm busy now.
 
-## ✨ Customizing Desktop
+## ✨ Customizing Your Distro
 
 ### 🗚  More fonts
 Here are some fonts I think you should install on your system.
