@@ -1,4 +1,4 @@
-# 🎩 Hello stranger
+# 🎩 Hello Stranger
 This are my personal dotfiles (at least some of them) for a development environment and for a good-looking desktop. You ca use both of them at the same time if you wish, or you can just chose one of them that you'd like to use and installed it.
 
 ## ⚙️ Development Environment
