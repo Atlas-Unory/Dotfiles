@@ -149,8 +149,23 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
 		yay -Sy brave-bin visual-studio-code-bin lunacy-bin insomnia-bin
 	fi
 
-	# Installing NVM in fish shell
-	fisher install FabioAntunes/fish-nvm edc/bass
+	# Verifing if fisher is installed
+	if command -V fisher &>/dev/null; then
+		logInfo "Fisher is installed"
+	else
+		sudo pacman -S --noconfirm fisher
+		logCompletion "Fisher installed"
+	fi
+
+	# Verifing if NVM is installed
+	if command -V nvm &>/dev/null; then
+		logInfo "NVM is already installed"
+	else
+		# Installing NVM in fish shell
+		logAlert "Installing NVM"
+		fisher install FabioAntunes/fish-nvm edc/bass
+		logCompletion "NVM installed"
+	fi
 
 	# Installing TokyoNight themes for fish shell
 	fisher install vitallium/tokyonight-fish
@@ -224,7 +239,7 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
 	# Verifying if a font folder exists on the system
 	# And adding the new fonts
 
-	if [ -d "$HOME/.local/share/font" ] || [ -d "$HOME/.local/share/font" ]; then
+	if [ -d "$HOME/.local/share/fonts" ] || [ -d "$HOME/.local/share/font" ]; then
 		logAlert "A font folder was found, adding the new fonts..."
 
 		# Checking the font folder name and adding the fonts
