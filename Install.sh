@@ -172,6 +172,7 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
 
 	# Checking if LazyVim is already installed
 	if [ -d "$LAZY_VIM_DIR" ]; then
+		logAlert "Verifing if LazyVim is installed..."
 		if [ -f "$LAZY_VIM_DIR/init.lua" ]; then
 			logInfo "Lazy is installed, installing plugins..."
 
