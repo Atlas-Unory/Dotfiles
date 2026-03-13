@@ -122,7 +122,7 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
 	logInfo "Your system is CachyOS, updating packages..."
 
 	# Updating the system
-	sudo pacman -Syu
+	sudo pacman -Syu --noconfirm
 
 	# Installing the programs
 	logInfo "Installing programs..."
@@ -139,14 +139,14 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
 		logError "Yay is not installed"
 
 		logInfo "Installing Yay now..."
-
-		git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+		cd $HOME
+		git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd $HOME
 
 		logCompletion "Yay was installed successfully"
 
 		# Installing programs with yay
 		logAlert "Installing programs with yay"
-		yay -Sy brave-bin visual-studio-code-bin lunacy-bin insomnia-bin
+		yay -Sy --noconfirm brave-bin visual-studio-code-bin lunacy-bin insomnia-bin
 	fi
 
 	# Verifing if fisher is installed
