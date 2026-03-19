@@ -60,22 +60,26 @@ FASTFETCH_CONF_DIR="$HOME/.config/fastfech/"
 
 # Show the user that a task got completed
 logCompletion() {
-	echo -e "✅${Green} $1 ${OFF}\n"
+	local Green='\033[0;32m'
+	echo -e "✅${Green}%s $1 ${OFF}"
 }
 
 # Show the user information
 logInfo() {
-	echo -e "ℹ️${White} $2 ${OFF}\n"
+	local White='\033[0;37m'
+	echo -e "ℹ️${White}%s $2 ${OFF}"
 }
 
 # Show the user that an error has occurred on the system
 logError() {
-	echo -e "❌${Red} $3 ${OFF}\n"
+	local Red='\033[0;31m'
+	echo -e "❌${Red}%s $3 ${OFF}"
 }
 
 # Show the user what actions need to be taken
 logAlert() {
-	echo -e "🚨${Yellow} $4 ${OFF}\n"
+	local Yellow='\033[0;33m'
+	echo -e "🚨${Yellow}%s $4 ${OFF}"
 }
 
 #+---------------------------------------------------------+
@@ -126,49 +130,37 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
 
 	# Installing the programs
 	logInfo "Installing programs..."
-	sudo pacman -S --needed --noconfirm neovim vlc vlc-plugins-all starship ghostty libreoffice-fresh tmux yazi keepassxc lazygit mysql-workbench fastfetch
+	sudo pacman -S --needed --noconfirm neovim vlc vlc-plugins-all starship clamav ghostty vivaldi libreoffice-fresh tmux yazi keepassxc lazygit mysql-workbench fastfetch
 
 	# Finishing install message
 	logCompletion "Installating completed"
 
 	# Verifying if yay is installed
 	if command -V yay &>/dev/null; then
-		logCompletion "yay is already installed, no actions will be taken"
+		logAlert "yay is already installed, no actions will be taken"
 	else
 		# Installing yay
 		logError "Yay is not installed"
 
 		logInfo "Installing Yay now..."
-		cd $HOME
+		cd "$HOME"
 		git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd $HOME
 
 		logCompletion "Yay was installed successfully"
 
 		# Installing programs with yay
 		logAlert "Installing programs with yay"
-		yay -Sy --noconfirm brave-bin visual-studio-code-bin lunacy-bin insomnia-bin
+		yay -S --noconfirm visual-studio-code-bin lunacy-bin insomnia-bin
 	fi
 
 	# Verifing if fisher is installed
 	if command -V fisher &>/dev/null; then
 		logInfo "Fisher is installed"
 	else
+		logInfo "Fisher is not installed, installing..."
 		sudo pacman -S --noconfirm fisher
 		logCompletion "Fisher installed"
 	fi
-
-	# Verifing if NVM is installed
-	if command -V nvm &>/dev/null; then
-		logInfo "NVM is already installed"
-	else
-		# Installing NVM in fish shell
-		logAlert "Installing NVM"
-		fisher install FabioAntunes/fish-nvm edc/bass
-		logCompletion "NVM installed"
-	fi
-
-	# Installing TokyoNight themes for fish shell
-	fisher install vitallium/tokyonight-fish
 
 	# Checking if LazyVim is already installed
 	if [ -d "$LAZY_VIM_DIR" ]; then
@@ -182,7 +174,8 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
 				rm -rf "$LAZY_VIM_DIR/lua/plugins"
 
 				# Adding my folder
-				ln -s "$DOTFILES_DIR/neovim/plugins/" "$LAZY_VIM_DIR/lua/plugins"
+				ln -s "$DOTFILES_DIR/neovim/" "$LAZY_VIM_DIR/lua/"
+				logCompletion "Plugins successfully installed"
 			fi
 		fi
 	else
@@ -196,8 +189,9 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
 
 		# Removing the current plugin folder and linking the new one
 		logAlert "Removing the plugins..."
+		rm -rf "$LAZY_VIM_DIR/lua/plugins"
 		logAlert "Adding the new folder..."
-		ln -s "$DOTFILES_DIR/neovim/plugins/" "$LAZY_VIM_DIR/lua/plugins"
+		ln -s "$DOTFILES_DIR/neovim/plugins/" "$LAZY_VIM_DIR/lua/"
 		logCompletion "Plugin's folder successfully added"
 	fi
 
@@ -207,20 +201,32 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
 
 	# Adding the image folder into the system
 	logInfo "Adding the wallpaper folder to the system..."
-	rm -rf "$HOME/Pictures"
+	rm -rf "$HOME/Pictures/*"
 	ln -s "$IMAGES_DIR" "$HOME/Pictures/Images"
 	logCompletion "Wallpaper folder added successfully"
 
 	# Removing the current ghostty configuration file and linking it to the new one
 	logAlert "Removing the current ghostty configuration file and linking the new one..."
+	if [ -e "$HOME/.config/ghosty/config.ghostty"]; then
+		logAlert "A ghostty configuration file was found, deleting it..."
+		rm "$HOME/.config/ghostty/config.ghostty"
+		logAlert "Adding the new configuration file"
+		ln -s "$DOTFILES_DIR/ghostty/config.ghostty" "$HOME/.config/ghostty/"
+		logCompletion "New configuration added"
+	elif [[ ! -d "$HOME/.config/ghostty" ]]; then
+		logAlert "no Ghostty folder found, adding the folder and the configuration file..."
+		mkdir "$HOME/.config/ghostty"
+		ln -s "$DOTFILES_DIR/ghostty/config" "$HOME/.config/ghostty/"
+	fi
+
 	rm "$HOME/.config/ghostty/config"
-	ln -s "$SCRIPT_DIR/ghostty/config" "$HOME/.config/ghostty/config"
+	ln -s "$SCRIPT_DIR/ghostty/config" "$HOME/.config/ghostty/"
 	logCompletion "Ghostty configuration file added successfully"
 
 	# Removing the current fish configuration file and linking the new one
 	logAlert "Deleting the current fish configuration file and adding the new one..."
 	rm "$HOME/.config/fish/config.fish"
-	ln -s "$SCRIPT_DIR/fish/config.fish" "$HOME/.config/fish/config.fish"
+	ln -s "$SCRIPT_DIR/fish/config.fish" "$HOME/.config/fish/"
 	logCompletion "Fish configuration file successfully added"
 
 	# Deleting a possible .tmux.conf file and linking to the new one
@@ -253,9 +259,9 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
 		# No font folder was found, creating folder and adding the fonts
 		logAlert "No font folder found, creating it..."
 		mkdir "$HOME/.local/share/fonts"
-		logAlert "Font folder successfully created"
 		logInfo "Adding the new fonts"
-		ln -s "$SCRIPT_DIR/fonts/*" "$HOME/.local/sahre/fonts"
+		ln -s "$SCRIPT_DIR/fonts/" "$HOME/.local/share/"
+		# ln -s "$SCRIPT_DIR/fonts/*" "$HOME/.local/sahre/fonts/"
 		logCompletion "New fonts added successfully"
 	fi
 
@@ -274,6 +280,20 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
 		ln -s "$SCRIPT_DIR/fastfetch/config.jsonc" "$FASTFETCH_CONF_DIR/config.jsonc"
 		logCompletion "Fastfetch configuration file added successfully"
 	fi
+
+	# Verifing if NVM is installed
+	if command -V nvm &>/dev/null; then
+		logInfo "NVM is already installed"
+	else
+		# NVM alert
+		logAlert "NVM is not installed."
+		logAlert "Open another termianl window and run this commands:"
+		logInfo "fisher install FabioAntunes/fish-nvm edc/bass"
+	fi
+
+	# Menssage to install TokyoNight themes for fish shell
+	logAlert "Run this commands in a new terminal window to install TokyoNight themes for fish shell"
+	logInfo "fisher install vitallium/tokyonight-fish"
 
 	# Finishing all installation
 	logCompletion "All setup fished"
