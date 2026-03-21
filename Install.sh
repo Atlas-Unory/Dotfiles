@@ -8,29 +8,7 @@
 OFF='\033[0m' # Text Reset - very important!
 
 # Colors
-Black='\033[0;30m'
-Yellow='\033[0;33m'
-Cyan='\033[0;36m'
-Red='\033[0;31m'
 Blue='\033[0;34m'
-Green='\033[0;32m'
-Purple='\033[0;35m'
-White='\033[0;37m'
-
-# Bold Colors
-BBlack='\033[1;30m'
-BYellow='\033[1;33m'
-BCyan='\033[1;36m'
-BRed='\033[1;31m'
-BBlue='\033[1;34m'
-BWhite='\033[1;37m'
-BGreen='\033[1;32m'
-BPurple='\033[1;35m'
-
-# Underline, dim, etc.
-Underline='\033[4m'
-Bold='\033[1m'
-Dim='\033[2m'
 
 # Machine operating system
 COMPUTER_OS=""
@@ -211,10 +189,10 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
 		logAlert "A ghostty configuration file was found, deleting it..."
 		rm "$HOME/.config/ghostty/config.ghostty"
 		logAlert "Adding the new configuration file"
-		ln -s "$DOTFILES_DIR/ghostty/config.ghostty" "$HOME/.config/ghostty/"
+		ln -s "$DOTFILES_DIR/ghostty/config" "$HOME/.config/ghostty/"
 		logCompletion "New configuration added"
 	elif [[ ! -d "$HOME/.config/ghostty" ]]; then
-		logAlert "no Ghostty folder found, adding the folder and the configuration file..."
+		logAlert "No Ghostty folder found, adding the folder and the configuration file..."
 		mkdir "$HOME/.config/ghostty"
 		ln -s "$DOTFILES_DIR/ghostty/config" "$HOME/.config/ghostty/"
 	fi
@@ -226,7 +204,7 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
 	# Removing the current fish configuration file and linking the new one
 	logAlert "Deleting the current fish configuration file and adding the new one..."
 	rm "$HOME/.config/fish/config.fish"
-	ln -s "$SCRIPT_DIR/fish/config.fish" "$HOME/.config/fish/"
+	ln -s "$SCRIPT_DIR/fish/config.fish" "$HOME/.config/fish/config.fish"
 	logCompletion "Fish configuration file successfully added"
 
 	# Deleting a possible .tmux.conf file and linking to the new one
@@ -234,12 +212,12 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
 		logAlert "A tmux configuration file was found, deleting it..."
 		rm "$HOME/.tmux.conf"
 		logInfo "Adding the new .tmux.conf"
-		ln -s "$SCRIPT_DIR/tmux/.tmux.conf" "$HOME"
+		ln -s "$SCRIPT_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
 		logCompletion ".tmux.conf successfully added"
 	else
 		# It seems no .tmux.conf is on the system's home directory, then it'll link directly to the Dotfiles tmux configuration
 		logAlert "Adding the tmux configuration file..."
-		ln -s "$SCRIPT_DIR/tmux/.tmux.conf" "$HOME"
+		ln -s "$SCRIPT_DIR/tmux/.tmux.conf" "$HOME/"
 		logCompletion ".tmux.conf successfully added"
 	fi
 
@@ -258,7 +236,6 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
 	else
 		# No font folder was found, creating folder and adding the fonts
 		logAlert "No font folder found, creating it..."
-		mkdir "$HOME/.local/share/fonts"
 		logInfo "Adding the new fonts"
 		ln -s "$SCRIPT_DIR/fonts/" "$HOME/.local/share/"
 		# ln -s "$SCRIPT_DIR/fonts/*" "$HOME/.local/sahre/fonts/"
