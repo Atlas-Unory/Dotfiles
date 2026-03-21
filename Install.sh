@@ -108,7 +108,7 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
 
 	# Installing the programs
 	logInfo "Installing programs..."
-	sudo pacman -S --needed --noconfirm neovim vlc vlc-plugins-all starship clamav ghostty vivaldi libreoffice-fresh tmux yazi keepassxc lazygit mysql-workbench fastfetch
+	sudo pacman -S --needed --noconfirm neovim vlc vlc-plugins-all starship clamav typos ghostty vivaldi libreoffice-fresh tmux yazi keepassxc lazygit mysql-workbench fastfetch
 
 	# Finishing install message
 	logCompletion "Installating completed"
