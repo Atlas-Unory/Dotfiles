@@ -1,45 +1,27 @@
 return {
+	-- 1. Oxocarbon
+	{ "nyoom-engineering/oxocarbon.nvim" },
 
-  {
-    "nyoom-engineering/oxocarbon.nvim",
-    -- Add in any other configuration;
-    --   event = foo,
-    --   config = bar
-    --   end,
-  },
+	-- 2. OneDark
+	{
+		"navarasu/onedark.nvim",
+		opts = {
+			style = "deep",
+		},
+	},
 
-  {
-    "navarasu/onedark.nvim",
-    -- priority = 1000, -- make sure to load this before all the other start plugins
-    -- config = function()
-    --   require("onedark").setup({
-    --     style = "deep",
-    --   })
-    --   require("onedark").load()
-    -- end,
-  },
+	-- 3. TokyoDark
+	{ "tiagovla/tokyodark.nvim" },
 
-  {
-    "tiagovla/tokyodark.nvim",
-    -- priority = 1000,
-    -- opts = {
-    --   -- custom options here
-    -- },
-    -- config = function(_, opts)
-    --   require("tokyodark").setup(opts) -- calling setup is optional
-    --   vim.cmd([[colorscheme tokyodark]])
-    -- end,
-  },
+	-- 4. Dracula
+	{ "Mofiqul/dracula.nvim" },
 
-  {
-    { "Mofiqul/dracula.nvim" },
-    --
-    -- -- Configure LazyVim to load dracula
-    -- {
-    --   "LazyVim/LazyVim",
-    --   opts = {
-    --     colorscheme = "dracula",
-    --   },
-    -- },
-  },
+	{ "scottmckendry/cyberdream.nvim" },
+
+	-- {
+	-- 	"LazyVim/LazyVim",
+	-- 	opts = {
+	-- 		colorscheme = "dracula",
+	-- 	},
+	-- },
 }
