@@ -128,7 +128,7 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
 
     # Installing programs with yay
     logAlert "Installing programs with yay"
-    yay -S --noconfirm visual-studio-code-bin lunacy-bin insomnia-bin
+    yay -S --noconfirm visual-studio-code-bin lunacy-bin insomnia-bin spotify imhex-bin affine-bin
   fi
 
   # Verifing if fisher is installed
