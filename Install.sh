@@ -212,19 +212,18 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
     logAlert "A tmux configuration file was found, deleting it..."
     rm "$HOME/.tmux.conf"
     logInfo "Adding the new .tmux.conf"
-    ln -s "$SCRIPT_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
+    ln -s "$SCRIPT_DIR/tmux/.tmux.conf" "$HOME/"
     logCompletion ".tmux.conf successfully added"
   elif [ -d "$HOME/.config/tmux/" ]; then
     logAlert "A tmux configuration folder was found, delegting it..."
     rm "$HOME/.config/tmux"
     logInfo "Adding the new tmux file"
     mkdir "$HOME/.config/tmux"
-    ln -s "$SCRIPT_DIR/tmux" "$HOME/.config/"
+    ln -s "$SCRIPT_DIR/tmux/.tmux.conf" "$HOME/.config/tmux"
   else
-    # It seems no .tmux.conf is on the system's home directory, then it'll link directly to the Dotfiles tmux configuration
+    # It seems no .tmux.conf is on the system's home directory, so it'll be linked to the home
     logAlert "Adding the tmux configuration file..."
-    mkdir "$HOME/.config/tmux"
-    ln -s "$SCRIPT_DIR/tmux" "$HOME/.config/"
+    ln -s "$SCRIPT_DIR/tmux/.tmux.conf" "$HOME/"
     logCompletion ".tmux.conf successfully added"
   fi
 
