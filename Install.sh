@@ -122,7 +122,7 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
 
     logInfo "Installing Yay now..."
     cd "$HOME"
-    git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd $HOME
+    git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd "$HOME"
 
     logCompletion "Yay was installed successfully"
 
