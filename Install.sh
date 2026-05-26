@@ -185,7 +185,7 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
 
   # Removing the current ghostty configuration file and linking it to the new one
   logAlert "Removing the current ghostty configuration file and linking the new one..."
-  if [ -e "$HOME/.config/ghosty/config.ghostty"]; then
+  if [ -e "$HOME/.config/ghosty/config.ghostty" ]; then
     logAlert "A ghostty configuration file was found, deleting it..."
     rm "$HOME/.config/ghostty/config.ghostty"
     logAlert "Adding the new configuration file"
