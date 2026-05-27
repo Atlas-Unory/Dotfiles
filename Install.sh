@@ -76,7 +76,7 @@ echo -e " $Blue
 /_/   \_\   |_|   |_____| /_/   \_\ |____/      |____/   \___/    |_|   |_|     |___| |_____| |_____| |____/ 
 $OFF"
 
-echo -e "⭐$BYellow Identifing your system $OFF"
+echo -e "⭐$Yellow Identifing your system $OFF"
 
 if [ "$(uname -s)" == "Linux" ]; then
   echo "This system is Linux."
