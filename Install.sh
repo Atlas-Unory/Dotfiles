@@ -110,6 +110,48 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
   logInfo "Installing programs..."
   sudo pacman -S --needed --noconfirm neovim vlc vlc-plugins-all starship clamav typos ghostty vivaldi libreoffice-fresh tmux yazi keepassxc lazygit mysql-workbench fastfetch dbeaver docker shellcheck readest
 
+  # Installing docker
+  if [ "$(uname -m)" == "x86_64" ]; then
+    logInfo "Your machine is x86_64"
+
+    if command -V docker &>/dev/null; then
+      echo "Verifying if Docker is installed on your machine"
+      logInfo "Docker is already installed"
+      if command -V docker-desktop &>/dev/null; then
+        logInfo "Docker Desktop is already installed"
+      else
+        logAlert "Docker Desktop is not installed"
+        logAlert "Installing Docker Desktop"
+        wget https://download.docker.com/linux/static/stable/x86_64/docker-29.5.2.tgz -qO- | tar xvfz - docker/docker --strip-components=1
+        sudo --noconfirm cp -rp ./docker /usr/local/bin/ && rm -r ./docker
+        curl -L "https://desktop.docker.com/linux/main/amd64/227598/docker-desktop-x86_64.pkg.tar.zst?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" -o "$HOME/Downloads/docker-desktop-x86_64.pkg.tar.zst"
+        sudo --noconfirm pacman -U "$HOME/Downloads/docker-desktop-x86_64.pkg.tar.zst"
+        logCompletion "Docker installation finished"
+      fi
+
+      if command -V docker-compose &>/dev/null; then
+        logInfo "Docker Compose is already installed"
+      else
+        logAlert "Docker Compose is not installed on your machine"
+        logAlert "Installing Docker Compose"
+        sudo pacman -S --noconfirm docker-compose
+        logCompletion "Docker Compose installation finished"
+      fi
+    else
+      logAlert "Docker is not installed on your machine"
+      logAlert "Installing Docker"
+      sudo pacman -S --noconfirm docker docker-compose
+      wget https://download.docker.com/linux/static/stable/x86_64/docker-29.5.2.tgz -qO- | tar xvfz - docker/docker --strip-components=1
+      sudo --noconfirm cp -rp ./docker /usr/local/bin/ && rm -r ./docker
+      curl -L "https://desktop.docker.com/linux/main/amd64/227598/docker-desktop-x86_64.pkg.tar.zst?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64" -o "$HOME/Downloads/docker-desktop-x86_64.pkg.tar.zst"
+      sudo --noconfirm pacman -U "$HOME/Downloads/docker-desktop-x86_64.pkg.tar.zst"
+      logCompletion "Docker installation finished"
+    fi
+  else
+    logError "Your machine is not x86_64"
+    logError "You'll have to install Docker and Docker Compose manually"
+  fi
+
   # Finishing install message
   logCompletion "Installating completed"
 
