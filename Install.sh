@@ -45,19 +45,19 @@ logCompletion() {
 # Show the user information
 logInfo() {
 	local White='\033[0;37m'
-	printf "ℹ️ %b%s%b" "$White" "$2" "${OFF}"
+	printf "ℹ️ %b%s%b" "$White" "$1" "${OFF}"
 }
 
 # Show the user that an error has occurred on the system
 logError() {
 	local Red='\033[0;31m'
-	printf "❌ %b%s%b" "$Red" "$3" "${OFF}"
+	printf "❌ %b%s%b" "$Red" "$1" "${OFF}"
 }
 
 # Show the user what actions need to be taken
 logAlert() {
 	local Yellow='\033[0;33m'
-	printf "🚨 %b%s%b" "$Yellow" "$4" "${OFF}"
+	printf "🚨 %b%s%b" "$Yellow" "$1" "${OFF}"
 }
 
 #+---------------------------------------------------------+
