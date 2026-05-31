@@ -39,25 +39,25 @@ FASTFETCH_CONF_DIR="$HOME/.config/fastfech/"
 # Show the user that a task got completed
 logCompletion() {
   local Green='\033[0;32m'
-  echo -e "✅${Green}%s $1 ${OFF}"
+  printf "✅ %b%s%b\n" "$Green" "$1" "${OFF}"
 }
 
 # Show the user information
 logInfo() {
   local White='\033[0;37m'
-  echo -e "ℹ️${White}%s $2 ${OFF}"
+  printf "ℹ️ %b%s%b" "$White" "$2" "${OFF}"
 }
 
 # Show the user that an error has occurred on the system
 logError() {
   local Red='\033[0;31m'
-  echo -e "❌${Red}%s $3 ${OFF}"
+  printf "❌ %b%s%b" "$Red" "$3" "${OFF}"
 }
 
 # Show the user what actions need to be taken
 logAlert() {
   local Yellow='\033[0;33m'
-  echo -e "🚨${Yellow}%s $4 ${OFF}"
+  printf "🚨 %b%s%b" "$Yellow" "$4" "${OFF}"
 }
 
 #+---------------------------------------------------------+
