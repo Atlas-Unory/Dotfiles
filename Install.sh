@@ -108,7 +108,7 @@ if [[ "$COMPUTER_OS" == "cachyos" ]]; then
 
 	# Installing the programs
 	msg_info "Installing programs..."
-	sudo pacman -S --needed --noconfirm neovim vlc vlc-plugins-all starship clamav typos ghostty vivaldi libreoffice-fresh tmux yazi keepassxc lazygit mysql-workbench fastfetch dbeaver shellcheck readest
+	sudo pacman -S --needed --noconfirm neovim vlc vlc-plugins-all starship clamav typos ghostty vivaldi libreoffice-fresh tmux yazi keepassxc lazygit mysql-workbench fastfetch dbeaver shellcheck readest uv bun shfmt virtualbox
 
 	# Installing docker
 	if [ "$(uname -m)" == "x86_64" ]; then
