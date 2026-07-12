@@ -28,3 +28,13 @@ Fonts to display icons and emojis correctly
 ```bash
     sudo pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
 ```
+### About Fish Shell 🐟
+Here are somethings about the Fish Shell configuration file:
+
+- The configuration file uses the default [Starship](https://starship.rs) to add icons and visual effects to the shell and help the user to see better what is happening on their terminals.
+
+- Since i don't like to use things like the Kwallet on KDE to manage my SSH keys, I replaced it with [Keychain](https://github.com/danielrobbins/keychain), so, if you like to use Keychain, uncomment the lines referent to it to use it or use your preferencial method to manage your SSH keys.
+
+- I also like to use [Bat](https://github.com/sharkdp/bat) with the Dracula theme.
+
+- I only use NVM though the [Fisher plugin](https://github.com/jorgebucaran/nvm.fish) to mange my [NodeJS](https://nodejs.org/en) versions, but globally I only use the LTS version.
