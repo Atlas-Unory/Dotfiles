@@ -9,11 +9,13 @@ source /usr/share/cachyos-fish-config/cachyos-config.fish
 # Starship config
 starship init fish | source
 
-# Zellij alias
-alias zel="zellij"
-
 # NVM
 set --universal nvm_default_version lts
 
 # Bat
 export BAT_THEME="Dracula"
+
+# Start keychain and load your private key.
+# if status is-interactive
+#     keychain --eval minhachave_rsa | source
+# end
