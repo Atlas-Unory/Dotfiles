@@ -13,6 +13,7 @@ If you are an Arch Linux user or are currently using one of its distributions. I
 
 ### 🗚  More fonts
 Here are some fonts I think you should install on your system.
+🚨 **This fonts are recommended only if you are on Arch Linux**
 
 Adobe source sans serif and sans fonts and CJK and emoji which cover most of Asia characters.
 ```bash
