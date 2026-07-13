@@ -45,3 +45,19 @@ Here are somethings about the Fish Shell configuration file:
 - I also like to use [Bat](https://github.com/sharkdp/bat) with the Dracula theme.
 
 - I only use NVM though the [Fisher plugin](https://github.com/jorgebucaran/nvm.fish) to mange my [NodeJS](https://nodejs.org/en) versions, but globally I only use the LTS version.
+
+### Neovim
+
+Here are a table of all my [Neovim]() plugins and its description:
+
+| Plugin                  | Description                                                                                                                                                                                                                             |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| mfussenegger/nvim-dap   | nvim-dap is a Debug Adapter Protocol client implementation for Neovim. [Link](https://neovimcraft.com/plugin/mfussenegger/nvim-dap/)                                                                                                    |
+| j-hui/fidget.nvim       | Extensible UI for Neovim notifications and LSP progress messages. [Link](https://neovimcraft.com/plugin/j-hui/fidget.nvim/)                                                                                                             |
+| formatters              | These are just formatters that I like to use, you can just use them or change to those you like in the `.lua` file                                                                                                                      |
+| linters                 | These are just linters that I like to use, you can just use them or change to those you like in the `.lua` file                                                                                                                         |
+| catgoose/nvim-colorizer | A high-performance color highlighter for Neovim with no external dependencies. Written in performant Luajit. [Link](https://neovimcraft.com/plugin/catgoose/nvim-colorizer.lua/)                                                        |
+| render-markdown.nvim    | Improve viewing Markdown in Neovim. [Link](https://neovimcraft.com/plugin/MeanderingProgrammer/render-markdown.nvim/)                                                                                                                   |
+| smear-cursor.nvim       | Neovim plugin to animate the cursor with a smear effect in all terminals. [Inspired by Neovide's animated cursor](https://neovide.dev/features.html#animated-cursor). [Link](https://neovimcraft.com/plugin/sphamba/smear-cursor.nvim/) |
+| themes                  | It is just the themes I like to use, you can modifi them however you want and add more themes.                                                                                                                                          |
+| visual-whitespace.nvim  | Display white space characters in visual mode, like VSCode's renderWhitespace: selection. [Link](https://github.com/mcauley-penney/visual-whitespace.nvim)                                                                              |
