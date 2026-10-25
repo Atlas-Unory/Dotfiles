@@ -13,7 +13,17 @@ if [ -f /etc/os-release ]; then
 
 	if [ "$ID" = "cachyos" ]; then
 		echo "The distribution is CachyOS"
+		for package in "${Packages[@]}"; do
+			if [ "$package" != "yay" ]; then
+				sudo pacman -S "$package"
+			else
+				git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd "$SCRIPT_LOCATION" || exit
+			fi
+		done
 
+		for package in "${Packages_AUR[@]}"; do
+			yay -S "$package"
+		done
 	fi
 else
 	echo "Cannot detect distribution."
